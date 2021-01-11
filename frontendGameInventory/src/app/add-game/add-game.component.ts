@@ -50,6 +50,8 @@ export class AddGameComponent implements OnInit {
     
   }
 
+
+  
   get GameTitle() {
     return this.gamesaveform.get("title");
   }

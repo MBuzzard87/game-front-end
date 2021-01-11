@@ -15,9 +15,17 @@ import { getAllLifecycleHooks } from '@angular/compiler/src/lifecycle_reflector'
 export class GamelistComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private gameservice: GameService) { }
+
+
+  games: Observable<Game[]>;
+  game: Game = new Game();
+  gamelist: any;
 
   ngOnInit(): void {
+    this.gameservice.getGameList().subscribe(data => {
+      this.games = data;
+    })
   }
 
 }
