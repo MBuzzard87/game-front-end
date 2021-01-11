@@ -1,0 +1,81 @@
+<h3>Add Game to Inventory</h3>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div [hidden]="submitted" style="width: 400px;">  
+      <form [formGroup]="gamesaveform" #savegame (ngSubmit)="saveGame(saveGame)">  
+          <div class="form-group">  
+              <label for="name">Title</label>  
+              <input type="text" class="form-control"  formControlName="title" data-toggle="tooltip"   
+                 data-placement="right" title="Title" >  
+          </div>  
+          <div class="form-group">  
+            <label for="console">Console</label>  
+              <select class="form-control" formControlName="console" data-toggle="tooltip"   
+                    data-placement="right" title="Select Console">  
+                  <option value="null">--Select Console--</option>  
+                <option value="NES">Nintendo</option>  
+                <option value="SNES">Super Nintendo</option>  
+                <option value="Sega">Sega Genesis</option>  
+                <option value="PS1">Playstation 1</option>  
+                <option value="N64">Nintendo 64</option> 
+                <option value="Dreamcast">Dreamcast</option> 
+              </select>  
+        </div>  
+        <div class="form-group">  
+            <label for="year">Year</label>  
+              <select class="form-control" formControlName="year" data-toggle="tooltip"   
+                    data-placement="right" title="Select Year">  
+                  <option value="null">--Select Year--</option>  
+                <option value="87">1987</option>  
+                <option value="88">1988</option>  
+                <option value="89">1989</option>  
+                <option value="90">1990</option>  
+                <option value="91">1991</option> 
+                <option value="92">1992</option>  
+                <option value="93">1993</option>  
+                <option value="94">1994</option>  
+                <option value="95">1995</option>  
+                <option value="96">1996</option> 
+                <option value="97">1997</option>  
+                <option value="98">1998</option>  
+                <option value="99">1999</option>  
+                <option value="00">2000</option>  
+                <option value="01">2001</option> 
+                <option value="02">2002</option>  
+                <option value="03">2003</option>  
+                <option value="04">2004</option>  
+                <option value="05">2005</option>                  
+              </select>  
+        </div> 
+        <div class="form-group">  
+            <label for="developer">Developer</label>  
+            <input type="text" class="form-control"  formControlName="developer" data-toggle="tooltip"   
+               data-placement="right" title="Developer" >  
+        </div>  
+        <div class="form-group">  
+            <label for="price">Price</label>  
+            <input type="text" class="form-control"  formControlName="price" data-toggle="tooltip"   
+               data-placement="right" title="Price" >  
+        </div>  
+        <div class="form-group">  
+            <label for="stock">Stock</label>  
+            <input type="text" class="form-control"  formControlName="stock" data-toggle="tooltip"   
+               data-placement="right" title="Stock" >  
+        </div>      
+          <button type="submit" class="btn btn-success">Submit</button>  
+      </form>  
+  </div>  
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4">  
+      <div [hidden]="!submitted">  
+         <h4>Game Added Successfully!</h4>  
+         <button (click)="addGameForm()" class='btn btn-primary'>Add More Games</button>  
+      </div>        
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  
